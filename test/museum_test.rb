@@ -20,10 +20,10 @@ class MuseumTest < Minitest::Test
     assert_equal ["Dead Sea Scrolls" => 10],m.add_exhibit("Dead Sea Scrolls" => 10)
   end
 
-def test_it_can_add_additional_exhibit
-  m = Museum.new("Denver Museum of Nature and Science")
-  m.add_exhibit("Dead Sea Scrolls" => 10)
-  assert_equal ["Dead Sea Scrolls", "Gems and Minerals"], m.add_exhibit("Gems and Minerals" => 0)
-end
+  def test_it_can_add_additional_exhibit
+    m = Museum.new("Denver Museum of Nature and Science")
+    m.add_exhibit("Dead Sea Scrolls" => 10)
+    assert_equal ["Dead Sea Scrolls", "Gems and Minerals"], m.add_exhibit("Gems and Minerals" => 0)
+  end
 
 end
