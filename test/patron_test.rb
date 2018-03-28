@@ -15,14 +15,9 @@ class PatronTest < Minitest::Test
     assert_equal "Bob", p.name
   end
 
-  def test_it_can_have_an_interest
-    p = Patron.new("Bob")
-    assert_equal [], p.interest
-  end
-
   def test_it_can_add_interest
     p = Patron.new("Bob")
-    assert_equal ["Dead Sea Scrolls"] , p.add_interest
+    assert_equal ["Dead Sea Scrolls"], p.add_interest("Dead Sea Scrolls")
   end
 
 
