@@ -6,6 +6,10 @@ attr_reader :name, :exhibits
 
   def initialize(name)
     @name = name
-    @exhibit = {}
+    @exhibits = {}
+  end
+
+  def add_exhibit(title, cost)
+    @exhibits[title] = cost
   end
 end
