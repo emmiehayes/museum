@@ -16,9 +16,8 @@ attr_reader :name, :exhibits, :patrons, :revenue
     @exhibits[title] = cost
   end
 
-  def admit_patron(name, fee)
-    @patrons[name] = fee
+  def admit_patron(patron, fee)
+    @patrons[patron] = fee
+    @revenue += 10
   end
-
-
 end
