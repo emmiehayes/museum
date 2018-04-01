@@ -20,4 +20,22 @@ class PatronTest < Minitest::Test
     assert_equal [], bob.interests
   end
 
+  def test_interest_can_be_added
+    bob = Patron.new("Bob")
+    assert_equal ["Dead Sea Scrolls"], bob.add_interest("Dead Sea Scrolls")
+  end
+
+  def test_interest_can_be_added
+    bob = Patron.new("Bob")
+    assert_equal ["Gems and Minerals"], bob.add_interest("Gems and Minerals")
+  end
+
+  def test_patron_can_have_multiple_interest_at_once
+    bob = Patron.new("Bob")
+    bob.add_interest("Dead Sea Scrolls")
+    bob.add_interest("Gems and Minerals")
+    assert_equal ["Dead Sea Scrolls", "Gems and Minerals"], bob.interests
+  end
+
+
 end
