@@ -5,29 +5,19 @@ require './lib/patron'
 
 class PatronTest < Minitest::Test
 
-  def test_it_exist
-    p = Patron.new(name)
-    assert_instance_of Patron, p
+  def test_it_exists
+    bob = Patron.new(name)
+    assert_instance_of Patron, bob
   end
 
-  def test_it_can_have_a_name
-    p = Patron.new("Bob")
-    assert_equal "Bob", p.name
+  def test_patron_has_a_name
+    bob = Patron.new("Bob")
+    assert_equal "Bob", bob.name
   end
 
-  def test_it_can_add_sing_interest
-    p = Patron.new("Bob")
-    assert_equal ["Dead Sea Scrolls"], p.add_interest("Dead Sea Scrolls")
+  def test_patron_can_have_interest
+    bob = Patron.new("Bob")
+    assert_equal [], bob.interests
   end
-
-def test_it_can_add_additional_interest
-  p = Patron.new("Bob")
-  p.add_interest("Dead Sea Scrolls")
-  assert_equal ["Dead Sea Scrolls", "Gems and Minerals"], p.add_interest("Gems and Minerals")
-end
-
-
-
-
 
 end
