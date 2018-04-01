@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
 require './lib/museum'
+require './lib/patron'
 
 class MuseumTest < Minitest::Test
 
@@ -32,5 +33,12 @@ class MuseumTest < Minitest::Test
   dmns.add_exhibit("Dead Sea Scrolls", 10)
   dmns.add_exhibit("Gems and Minerals", 0)
   assert_equal ({"Dead Sea Scrolls" => 10, "Gems and Minerals" => 0}), dmns.exhibits
+  end
+
+  def test_it_can_admit_patrons_at_10_dollars_per
+    dmns = Museum.new("Denver Museum of Nature and Science")
+    bob = Patron.new("Bob")
+    dmns.admit_patron("Bob", 10)
+    assert_equal ({"Bob" => 10}), dmns.patrons
   end
 end
